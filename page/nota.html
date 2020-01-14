@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Dnet</title>
+
+  <script src="../js/jquery-3.4.1.min.js"></script>  
+  
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="../css/dnet.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.js">
+  <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
+<style>
+    img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.my-cart-icon-affix {
+    position: fixed;
+    z-index: 999;
+  }
+</style>
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Dnet Store</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="../index.html">Tentang Kami</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#product">Produk</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#kontak">Kontak</a>
+          </li>
+          <li>
+              <div style="float: right; cursor: pointer;">
+                  <span class="glyphicon glyphicon-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
+              </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Product Section -->
+  <section id="page" class="contact-section bg-black">
+      
+        <!-- keyboard gaming -->
+        <div class="container" >
+        <div class="row" style="padding-top: 60px;"> 
+          <div class="col-md-10 mb-3 mb-md-0">
+            <div class="card py-4 h-100r" >
+              <h2 class="text-center">TERIMAKASIH SUDAH BERBELANJA</h2>
+              <div class="card-body" >
+                <table class="table show-bukti"></table>
+                <div class="text-center">Total Bayar :<span id="total_bayar" onload="totalDiscount()"></span></div>
+              </div>
+            </div>
+          </div>
+          <div> 
+        </div>
+        </div>
+
+        
+        </div> -->
+    </section>
+    <section id="kontak" class="contact-section bg-black"> 
+        <div class="social d-flex justify-content-center">
+          <a href="#" class="mx-2">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="mx-2">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="mx-2">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-black small text-center text-white-50">
+    <div class="container">
+      Copyright &copy; Dnet Store 2020
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="../js/dnet.js"></script>
+  <script src="../js/cart.js"></script>
+  <script type="text/javascript">
+
+ document.getElementById('total_bayar').innerHTML = shoppingCart.totalCart();
+ var diskon=0;
+ var Totalbayar = 0;
+
+    $('#diskon').click(function(event){
+
+      if($('#diskon').val()==1){
+        diskon = shoppingCart.totalCart()*0.3;
+      }else if($('#diskon').val()==2){
+        diskon = shoppingCart.totalCart()*0.5;
+      }else{
+        diskon = 0;
+      }
+      Totalbayar = shoppingCart.totalCart()- diskon;
+      document.getElementById('total_bayar').innerHTML = Totalbayar;
+      
+    })
+    
+    function bayar(val){
+      document.getElementById('kembali').innerHTML = val - Totalbayar;
+    }
+
+  </script>
+
+</body>
+
+</html>
